@@ -1,0 +1,442 @@
+%		  6 September 2015
+%
+% To anyone downloading this file:
+% 
+% If you got this file from someone other than Ezra Miller, then there
+% might be a better version available directly from Ezra's homepage;
+% just type Ezra Miller into Google and you should be able to find it.
+% 
+% You may use this file freely as a template for your own CV, or for
+% any other purpose, but please leave these lines and those above them
+% in the file.
+% 
+% You might have to fiddle with the number of millimeters in the
+% \voffset commands to get your CV to print centered vertically on the
+% page.  You should also check page breaks and vertical spacing around
+% \marginlabel commands.
+
+\documentclass[11pt]{article}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+%\usepackage{revnum}
+\usepackage{etaremune}
+%usepackage{hyperref}
+
+\voffset=-10mm %to print: dvips *.dvi; ps2pdf *.ps
+\oddsidemargin=-20pt
+\headheight=18pt     \topmargin=0pt
+%\textheight=658pt   \textwidth=495pt %return to this if possible
+%\textheight=658pt   \textwidth=499.5pt
+%textheight=659pt   \textwidth=499.5pt
+\textheight=666pt   \textwidth=499.5pt
+%parskip=.3pt plus 1pt
+\parskip=.2pt plus .5pt
+
+\newcommand{\excise}[1]{}
+\newcommand{\comment}[1]{$\star${\sf\textbf{#1}}$\star$}
+
+\def\myname{\Large \bfseries P\normalsize EDRO \Large A\normalsize . \Large C\normalsize ASTILLEJO}
+\def\at{\raisebox{-1.5pt}{\includegraphics{at-11pt}}}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\cfoot{}		     % no footers (in pagestyle fancy) 
+\lhead{{\noindent\myname}}   % running left heading
+\rhead{{\Large\bfseries C\normalsize URRICULUM \Large V\normalsize ITAE
+	\quad\Large\thepage}}% running right heading
+
+\newcommand{\marginlabel}[1]{\bigskip\noindent{\textsf{\textbf{#1}}}\nopagebreak}
+			% bold sans-serif label for margin labels.
+
+% For lists with `year1--year2': jobs, honors, activities, and teaching
+\newenvironment{jobs}
+% 	{\vspace{-2ex}\leftmargini=24.1mm% to get dates even with margin
+	{\vspace{-2ex}\leftmargini=30mm%
+	 \begin{list}%
+		{}
+		{\setlength\labelwidth{22mm}\itemsep=-1.5mm}}
+	{\end{list}\vspace{-2ex}}
+
+\def\dates#1{\item[#1\hfill]}
+
+% For papers, listed reverse-chronologically but numbered chronologically;
+% \paper declares the beginning of each entry except for those with
+% \paperyear which is for the first paper in each year
+\newenvironment{papers}[1][1]
+	{\vspace{-2ex}\leftmargini=16.1mm%
+ 	 \begin{enumerate}\itemsep=-.5mm}
+ 	{\end{enumerate}\vspace{-2ex}}
+%	 \begin{revnumerate}[{#1}]\itemsep=-.5mm}
+%	{\end{revnumerate}\vspace{-2ex}}
+% 	 \begin{etaremune}\itemsep=-.5mm}
+% 	{\end{etaremune}\vspace{-2ex}}
+\def\paper{\item}
+%def\paperyear#1{\item[\stepcounter{enumi}%
+\def\paperyear#1{\item[\addtocounter{enumi}{1}%
+		 {\makebox[0mm][r]{\makebox[14mm]{#1\hfill\arabic{enumi}.}}}]}
+\newcounter{separated}%to save \enumi between types of papers; see \setcounter below
+
+% For projects in progress
+\newenvironment{progress}
+	{\vspace{-2ex}\leftmargini=16.1mm%
+	 \begin{itemize}\itemsep=-.5mm}
+	{\end{itemize}\vspace{-2ex}}
+
+% For the list of seminars; \talkyear is for the first line of each year
+\newenvironment{talks}
+	{\vspace{-2ex}\leftmargini=20mm
+	 \begin{list}
+		{}
+		{\setlength\labelwidth{8.5mm}}\itemsep=-1.5mm}
+	{\end{list}\vspace{-2ex}}
+
+\def\talk#1{\item[#1\hfill]}
+\def\talkyear#1#2{\item[{\makebox[0mm][r]{\makebox[9.5mm][l]{#1}}}{#2}\hfill]}
+
+% For the list of nonscientific academic awards
+\newenvironment{awards}
+% 	{\vspace{-2ex}\leftmargini=24.1mm% to get dates even with margin
+	{\vspace{-2ex}\leftmargini=18mm%
+	 \begin{list}%
+		{}
+		{\setlength\labelwidth{10mm}\itemsep=-1.5mm}}
+	{\end{list}\vspace{-2ex}}
+
+\def\award#1{\item[#1\hfill]}
+
+\def\thick{}%\textbf}
+
+%For bulleted lists (since {itemize} has spaces that are way too big)
+\newenvironment{bullets}%
+        {\begin{list}
+                {\noindent\makebox[0mm][r]{$\bullet$}}
+                {\leftmargin=5.5ex \usecounter{enumi}
+% 		 \topsep=1.5mm \itemsep=-.2em}
+% 		 \topsep=1.5mm \itemsep=0em}
+ 		 \topsep=1.5mm \itemsep=-1.3mm}
+        }
+        {\end{list}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\thispagestyle{empty}
+
+\mbox{}
+\vspace{-9ex}
+
+\centerline{\Large \bf Curriculum Vitae}
+\medskip
+\centerline{\myname}
+
+\begin{tabbing}
+\mbox{}\quad\= Office Address: \ \= Mathematics Department\qquad\qquad\qquad\quad
+            \= Email Address: \ \= \kill
+\>Office Address: \> Freie Universit\"at Berlin\\
+\>\>Fachbereich Mathematik und Informatik \> Office Phone:\> (+49) 30 838 752 35\\
+\>\>Arnimallee 3, Raum 111  \> Email Address: \> \textsf{castillejo@zedat.fu-berlin.de}\\
+\>\>14195, Berlin, Germany \> Homepage:\>%\href{http://www.mi.fu-berlin.de/users/castillejo/}
+{\textsf{www.mi.fu-berlin.de/users/castillejo/}}\\
+\> Date of Birth: \> 1991 (Madrid, Spain) \> Date of CV: \> November 2015
+\end{tabbing}
+
+
+\vspace{-5.5mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\marginlabel{Education}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{jobs}
+
+\dates{2013$\;$--$\;$} Master of Mathematics, \thick{FU Berlin}.
+
+\dates{2009$\;$--$\;$2013} Bachelor of Mathematics,
+	\thick{Universidad Complutense de Madrid}.
+
+
+\end{jobs}
+
+
+\vspace{-3mm}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\marginlabel{Research interests}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Combinatorial aspects of geometry and algebra
+Arithmetic geometry, algebraic number theory, algebraic geometry.
+
+
+
+\vspace{-.5ex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\marginlabel{Publications}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\vspace{-2.25ex}
+
+\begin{papers}[1]%\setcounter{enumi}{\value{separated}}%restores \enumi
+
+\paperyear{2010}
+(with V. Arnaiz and A. Gonz\'alez) \emph{Sobre el problema de Flavio Josefo},
+	 (Spanish). Ponencias de j\'ovenes investigadores (I) (Colecci\'on Cuadernos del I.N.I.C.E.. Investigaci\'on juvenil; n. 96). 2010. 
+
+\end{papers}
+
+
+
+
+%pagebreak
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\marginlabel{Talks}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\begin{talks}
+\talkyear{2015}{Oct.}% #8
+	FU Berlin: Crystalline cohomology. Research seminar on Supersingular K3 Surfaces.
+
+
+\talkyear{------}{Oct.}% #7
+	FU Berlin:
+	Chow ring. Seminar on Intersection theory.
+
+\talkyear{------}{Jun.}% #6
+	FU Berlin:
+	Cohomology of $\mathbb{G}_m$ on a curve. Seminar on \'Etale cohomology.
+
+\talkyear{------}{Jun.}% #5
+	FU Berlin:
+	Category of sheaves on the \'etale site. Seminar on \'Etale cohomology.
+	
+\talkyear{------}{Apr.}% #4
+	FU Berlin:
+	Introduction to stacks. Research seminar on Rational Sections and Serre's Conjecture.
+	
+\talkyear{2014}{May}% #3
+	FU Berlin:
+	Theorem of the cube. Seminar on Abelian varieties.
+ 
+\talkyear{------}{Feb.}% #2
+	FU Berlin:
+	Homotopy, contractibility and deformation retractions. Course on Algebraic to\-pology.
+	
+\talkyear{------}{Jan.}% #1
+	FU Berlin:
+	Ruled quartic surfaces. Seminar on Algebraic geometry.
+	
+
+
+\end{talks}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\marginlabel{Seminars and conferences}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{jobs}
+
+\dates{2015}
+Supersingular K3 Surfaces, FU Berlin, Winter Semester 2015-16.
+
+\dates{------}
+Intersection Theory, FU Berlin, Winter Semester 2015-16.
+
+\dates{------}
+Perfectoid Spaces, Bressanone, August 31-September 4, 2015.
+
+\dates{------}
+AMS Summer Institute in Algebraic Geometry, Salt Lake City, July 12-August 1, 2015.
+
+\dates{------}
+\'Etale Cohomology, FU Berlin, Summer Semester 2015.
+
+\dates{------}
+Rational Sections and Serre's Conjecture, FU Berlin, Summer Semester 2015.
+
+\dates{------}
+Day of Arithmetic and Algebraic Geometry, Berlin, March 12, 2015.
+
+\dates{2014}
+Topics in Characteristic $p > 0$ and $p$-Adic Geometry, \L ukecin, September 8-12, 2014.
+
+\dates{------}
+VBAC 2014, Berlin, September 1-5, 2014. 
+
+\dates{------}
+CMI Summer School: Periods and Motives, Madrid, June 30-July 25, 2014.
+
+\dates{2012}
+Escuela JAE de Matem\'aticas, Madrid, July 2-27, 2012. 
+
+\dates{2011}
+Escuela JAE de Matem\'aticas, Madrid, July 4-22, 2011. 
+
+\end{jobs}
+
+\newpage
+
+\vspace{-1.25ex}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\marginlabel{Activity}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{-2.25ex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\marginlabel{\sf Teaching assistant}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{jobs}
+\dates{2014\ \, Spring}
+Lineare Algebra und Analytische Geometrie II. HU Berlin.
+
+\dates{2013\ \, Fall}
+Lineare Algebra und Analytische Geometrie I. HU Berlin.
+
+\end{jobs}
+
+
+\vspace{-2.25ex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\marginlabel{\sf Organization of seminar and conferences}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{jobs}
+\dates{2015\ \, Fall}
+Seminar of Intersection Theory (with Yun Hao). FU Berlin.
+
+\dates{2015\ \, Spring}
+Seminar of \'Etale Cohomology (with Elena Lavanda). FU Berlin.
+
+\dates{2012\ \, April}
+Lecture series ``Logic and G\"odel". UCM Madrid.
+
+\dates{2011\ \, May}
+Lecture series ``Mathematics and science". UCM Madrid.
+
+\end{jobs}
+
+
+\vspace{-2.25ex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\marginlabel{\sf Editorial activities}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{jobs}
+\dates{2010$\;$--$\;$}
+Referee of \textit{Matgazine}.
+
+\dates{2010$\;$--$\;$2012}
+Director of \textit{Matgazine}.
+
+\dates{2010}
+Foundation of \textit{Matgazine}, the mathematics magazine of the students (in Spanish).
+
+\end{jobs}
+
+\vspace{-2.25ex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\marginlabel{\sf University service}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{jobs}
+\dates{2011}
+Voluntier in the local phase of OME (Spanish Mathematical Olympiad).
+
+\dates{2010$\;$--$\;$2012}
+Voluntier in ``Concurso de Primavera'' (Outreach mathematical contest).
+
+\dates{2010}
+Voluntier in ``Concurso intercentros'' (Outreach mathematical contest).
+
+\end{jobs}
+
+
+\vspace{-2.25ex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\marginlabel{\sf Competitions}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{jobs}
+\dates{2012}
+International Mathematics Competition for University Students. Blagoevrad, Bulgaria. Bronze medal.
+
+\dates{2011}
+International Mathematics Competition for University Students. Blagoevrad, Bulgaria. Bronze medal.
+
+\dates{2010}
+Olimpiada Iberoamericana de Matem\'atica Universitaria. Top 10 in Spain.
+
+\end{jobs}
+
+
+\vspace{-2ex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\marginlabel{Scholarships}%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{jobs}
+\dates{2014$\;$--$\;$2016}
+Mutua Madrile\~na Foundation Master studies scholarship.
+
+\dates{2012}
+JAE Introduction to research scholarship.
+
+\dates{2011}
+JAE Introduction to research scholarship.
+
+\dates{2010$\;$--$\;$2011}
+Comunidad de Madrid's excelence scholarship.
+
+\dates{2009$\;$--$\;$2010}
+Comunidad de Madrid's excelence scholarship.
+
+
+\end{jobs}
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%% Various Emacs customizations
+%%% Local Variables:
+%%% mode: latex
+%%% mode: LaTeX-math
+%%% fill-column: 70
+%%% indent-tabs-mode: t
+%%% TeX-electric-sub-and-superscript: nil
+%%% TeX-brace-indent-level: 0
+%%% LaTeX-indent-level: 0
+%%% LaTeX-item-indent: 0
+%%% End:
